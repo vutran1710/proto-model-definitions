@@ -10,3 +10,9 @@ message EmployeeBook {
   string owner = 1;
   int32 id = 2;
 }
+
+message InputData {
+    string name = 1;
+    int32 age = 2;
+    string email = 3;
+}
