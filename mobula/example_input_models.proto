@@ -1,41 +1,42 @@
 syntax = "proto3";
 
-message InputData {
+package mobula_input;
 
-    message Asset {
-        string name = 1;
-        string symbol = 2;
-        uint32 id = 3;
-        repeated string contracts = 4;
-        string logo = 5;
-        repeated string blockchains = 6;
-    }
+message Asset {
+    string name = 1;
+    string symbol = 2;
+    uint32 id = 3;
+    repeated string contracts = 4;
+    string logo = 5;
+    repeated string blockchains = 6;
+}
 
-    message Contracts_balances {
-        double balance = 1;
-        optional string balanceRaw = 2;
-        optional string chainId = 3;
-        string address = 4;
-        uint32 decimals = 5;
-    }
+message Contracts_balances {
+    double balance = 1;
+    optional string balanceRaw = 2;
+    optional string chainId = 3;
+    string address = 4;
+    uint32 decimals = 5;
+}
 
-    message Assets {
-        Asset asset = 1;
-        double realized_pnl = 2;
-        double unrealized_pnl = 3;
-        double allocation = 4;
-        double price = 5;
-        double price_bought = 6;
-        double price_change_24h = 7;
-        double price_change_1h = 8;
-        double total_invested = 9;
-        double min_buy_price = 10;
-        double max_buy_price = 11;
-        double estimated_balance = 12;
-        double token_balance = 13;
-        repeated Contracts_balances contracts_balances = 14;
-    }
+message Assets {
+    Asset asset = 1;
+    double realized_pnl = 2;
+    double unrealized_pnl = 3;
+    double allocation = 4;
+    double price = 5;
+    double price_bought = 6;
+    double price_change_24h = 7;
+    double price_change_1h = 8;
+    double total_invested = 9;
+    double min_buy_price = 10;
+    double max_buy_price = 11;
+    double estimated_balance = 12;
+    double token_balance = 13;
+    repeated Contracts_balances contracts_balances = 14;
+}
 
+message WalletData {
     double total_wallet_balance = 1;
     string wallet = 2;
     repeated string wallets = 3;

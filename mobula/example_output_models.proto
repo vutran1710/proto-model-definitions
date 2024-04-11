@@ -1,26 +1,27 @@
 syntax = "proto3";
 
-message OutputData {
+package mobula_output;
 
-    message Asset {
-        string name = 1;
-        string symbol = 2;
-        uint32 id = 3;
-        repeated string contracts = 4;
-        string logo = 5;
-        repeated string blockchains = 6;
-    }
+message Asset {
+    string name = 1;
+    string symbol = 2;
+    uint32 id = 3;
+    repeated string contracts = 4;
+    string logo = 5;
+    repeated string blockchains = 6;
+}
 
-    message Assets {
-        Asset asset = 1;
-        double allocation = 4;
-        double price = 5;
-        double price_bought = 6;
-        double total_invested = 9;
-        double estimated_balance = 12;
-        double token_balance = 13;
-    }
+message Assets {
+    Asset asset = 1;
+    double allocation = 4;
+    double price = 5;
+    double price_bought = 6;
+    double total_invested = 9;
+    double estimated_balance = 12;
+    double token_balance = 13;
+}
 
+message MobulaWalletOut {
     double total_wallet_balance = 1;
     string wallet = 2;
     repeated Assets assets = 4;
